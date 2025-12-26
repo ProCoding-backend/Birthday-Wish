@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Barriecito&family=Caveat:wght@400..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Parisienne&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Karla', sans-serif;
+}
+
+body{
+    background: #0d0d0d;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.year-container{
+    position: absolute;
+    top: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.year{
+    font-size: 5.5rem;
+    color: #9dfb06;
+    position: relative;
+    -webkit-box-reflect: below 0px linear-gradient(rgba(255, 255, 255, 0.105));
+}
+
+.year.shadow{
+    text-shadow: 0 0 20px #9dfb06;
+}
+
+.container{
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.birthday{
+    font-size: 1.8rem;
+    font-family: 'Barriecito', system-ui;
+    color: #3cb9f3;
+    margin-bottom: 12px;
+}
+
+.birthday.name{
+    font-size: 4rem;
+    font-family: 'Parisienne', cursive;
+    color: #b537f2;
+    text-shadow: 0 0 10px #b537f2;
+    margin: 10px 0;
+
+}
+
+.birthday.name:nth-of-type(3){
+    font-size: 2rem;
+    color: #39ff14;
+    text-shadow: 0 0 10px #39ff14;
+    font-family: "Caveat", cursive;
+    margin-top: 24px;
+}
+
+.birthday.name:nth-of-type(4){
+    font-size: 1.8rem;
+    color: #ff6037;
+    text-shadow: 0 0 10px #ff6037;
+}
+
+.age-container{
+    margin-top: 40px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.birthday.name.fa.label{
+    font-family: 'Audiowide', cursive;
+    font-size: 1.4rem;
+    color: #ffffff;
+    text-shadow: 0 0 5px #ffffff;
+    -webkit-box-reflect: below 0px linear-gradient(rgba(255, 255, 255, 0.5));
+}
+
+.birthday.name.fa.label.age{
+    color: #9dfb06;
+    text-shadow: 0 0 10px #9dfb06;
+
+}
+.birthday.name.fa.label.time{
+    position: absolute;
+    color: #9dfb06;
+    text-shadow: 0 0 10px #9dfb06;
+    -webkit-box-reflect: below 0px linear-gradient(rgba(255, 255, 255, 0));
+    font-family: "Caveat", cursive;
+    font-optical-sizing: auto;
+    font-weight: 200;
+    font-style: normal;
+    margin-bottom:15%;
+
+}
