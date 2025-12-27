@@ -3,6 +3,7 @@ var tl = gsap.timeline();
 gsap.set(".birthday", { opacity: 0 });
 gsap.set(".birthday.name", { opacity: 0, y: 20 });
 gsap.set(".birthday.name.fa.label", { opacity: 0, y: 40 });
+gsap.set(".cake", { opacity: 0 });
 
 tl.to(".year.highlight", {
   y: -140,
@@ -59,7 +60,6 @@ tl.to(".birthday.name", {
       counter += 1;
       if (counter > 14) {
         clearInterval(intervalId);
-        
       }
     }, 100);
   },
@@ -71,12 +71,11 @@ tl.to(".birthday.name.fa.label", {
   filter: "hue-rotate(360deg)",
   duration: 1.5,
   repeat: -1,
-  onStart: () => {
-    gsap.to(".birthday.name.fa.label",{
-        
-    });
-  },
   ease: "power2.out"
 }, "+=0.4");
 
-
+tl.to(".cake", {
+  opacity: 1,
+  duration: 1.5,
+  ease: "bounce .out"
+}, "-=1.5");
