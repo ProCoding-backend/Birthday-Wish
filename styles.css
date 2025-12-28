@@ -239,3 +239,38 @@ body{
     75% { transform: skewX(-10deg); box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4); }
     100% { transform: skewX(5deg); box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5); }
 }
+.wish-container{
+    position: absolute;
+    color: #9dfb06;
+    min-height: 200px;
+    opacity: 1;
+}
+
+.word{
+    font-size: 3rem;
+
+}
+.word:nth-of-type(1), .letter0{
+    color: #fb064b;
+    text-shadow: 0 0 10px #fb064b;
+    font-family: 'Caveat', cursive;
+
+}
+.word:nth-of-type(2), .letter1{
+    color: #06dafb;
+    text-shadow: 0 0 10px #06dafb;
+    font-family: 'Caveat', cursive;
+
+}
+.word:nth-of-type(3), .letter2{
+    color: #16fb06;
+    text-shadow: 0 0 10px #16fb06;
+    font-family: 'Caveat', cursive;
+
+}
+.word:nth-of-type(4), .letter3{
+    color: #fbc606;
+    text-shadow: 0 0 10px #fbc606;
+    font-family: 'Caveat', cursive;
+
+}
