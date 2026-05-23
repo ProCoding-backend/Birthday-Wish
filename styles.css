@@ -1,12 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Barriecito&family=Caveat:wght@400..700&family=Karla:ital,wght@0,200..800;1,200..800&family=Parisienne&display=swap');
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Karla', sans-serif;
 }
 
-body{
+body {
     background: #0d0d0d;
     height: 100vh;
     width: 100vw;
@@ -14,28 +15,47 @@ body{
     justify-content: center;
     align-items: center;
     overflow: hidden;
+    cursor: pointer;
 }
 
-.year-container{
+.fullscreen-prompt {
     position: absolute;
-    top: 40%;
+    top: 20px;
+    color: #ffffff;
+    font-family: 'Caveat', cursive;
+    font-size: 1.5rem;
+    opacity: 0.7;
+    animation: pulse 2s infinite;
+    z-index: 100;
+}
+
+@keyframes pulse {
+    0% { opacity: 0.3; transform: scale(0.95); }
+    50% { opacity: 1; transform: scale(1.05); }
+    100% { opacity: 0.3; transform: scale(0.95); }
+}
+
+.year-container {
+    position: absolute;
+    top: 35%;
     display: flex;
     justify-content: center;
     align-items: center;
+    gap: 15px;
 }
 
-.year{
-    font-size: 5.5rem;
+.year {
+    font-size: 6.5rem;
     color: #9dfb06;
     position: relative;
-    -webkit-box-reflect: below 0px linear-gradient(rgba(255, 255, 255, 0.105));
+    -webkit-box-reflect: below 0px linear-gradient(rgba(255, 255, 255, 0.15));
 }
 
-.year.shadow{
-    text-shadow: 0 0 20px #9dfb06;
+.year.shadow {
+    text-shadow: 0 0 25px #9dfb06, 0 0 50px #9dfb06;
 }
 
-.container{
+.container {
     position: relative;
     inset: 0;
     display: flex;
@@ -45,75 +65,78 @@ body{
     text-align: center;
 }
 
-.birthday{
-    font-size: 1.8rem;
+.birthday {
+    font-size: 2.5rem;
     font-family: 'Barriecito', system-ui;
     color: #3cb9f3;
-    margin-bottom: 12px;
+    text-shadow: 0 0 15px #3cb9f3;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
 }
 
-.birthday.name{
-    font-size: 4rem;
+.birthday.name {
+    font-size: 5.5rem;
     font-family: 'Parisienne', cursive;
     color: #b537f2;
-    text-shadow: 0 0 10px #b537f2;
-    margin: 10px 0;
-
+    text-shadow: 0 0 15px #b537f2, 0 0 30px #b537f2;
+    margin: 5px 0;
 }
 
-.birthday.name:nth-of-type(3){
-    font-size: 2rem;
+.birthday.name:nth-of-type(3) {
+    font-size: 2.5rem;
     color: #39ff14;
-    text-shadow: 0 0 10px #39ff14;
+    text-shadow: 0 0 12px #39ff14;
     font-family: "Caveat", cursive;
-    margin-top: 24px;
+    margin-top: 30px;
 }
 
-.birthday.name:nth-of-type(4){
-    font-size: 1.8rem;
+.birthday.name:nth-of-type(4) {
+    font-size: 2.2rem;
     color: #ff6037;
-    text-shadow: 0 0 10px #ff6037;
+    text-shadow: 0 0 15px #ff6037;
+    margin-top: 10px;
 }
 
-.age-container{
-    margin-top: 40px;
+.age-container {
+    margin-top: 50px;
     display: flex;
-    gap: 10px;
+    gap: 15px;
     align-items: center;
+    flex-direction: column;
 }
 
-.birthday.name.fa.label{
+.birthday.name.fa.label {
     font-family: 'Audiowide', cursive;
-    font-size: 1.4rem;
+    font-size: 1.6rem;
     color: #ffffff;
-    text-shadow: 0 0 5px #ffffff;
+    text-shadow: 0 0 8px #ffffff;
     -webkit-box-reflect: below 0px linear-gradient(rgba(255, 255, 255, 0.5));
 }
 
-.birthday.name.fa.label.age{
+.birthday.name.fa.label.age {
     color: #9dfb06;
-    text-shadow: 0 0 10px #9dfb06;
-
+    text-shadow: 0 0 15px #9dfb06;
+    font-size: 2rem;
+    margin-top: 15px;
 }
-.birthday.name.fa.label.time{
-    position: absolute;
-    color: #9dfb06;
-    text-shadow: 0 0 10px #9dfb06;
+
+.birthday.name.fa.label.time {
+    color: #06dafb;
+    text-shadow: 0 0 12px #06dafb;
     -webkit-box-reflect: below 0px linear-gradient(rgba(255, 255, 255, 0));
     font-family: "Caveat", cursive;
-    font-optical-sizing: auto;
-    font-weight: 200;
-    font-style: normal;
-    margin-top:-10%;
-
+    font-weight: 400;
+    font-size: 2.2rem;
+    margin-top: 5px;
 }
+
 :root {
-    --cake-scale: 0.3;
-    --cake-top: 0px;
+    --cake-scale: 0.45;
+    --cake-top: -30px;
     --cake-left: 50px;
     --cake-right: auto;
     --cake-bottom: auto;
-    --cake-margin-bottom: 0;
+    --cake-margin-bottom: 20px;
 }
 
 .cake {
@@ -128,7 +151,6 @@ body{
     bottom: var(--cake-bottom);
     transform-origin: center bottom;
     opacity: 0;
-    
 }
 
 .cake > * {
@@ -239,38 +261,40 @@ body{
     75% { transform: skewX(-10deg); box-shadow: 0 0 10px rgba(255, 165, 0, 0.4), 0 0 20px rgba(255, 165, 0, 0.4), 0 0 60px rgba(255, 165, 0, 0.4), 0 0 80px rgba(255, 165, 0, 0.4); }
     100% { transform: skewX(5deg); box-shadow: 0 0 10px rgba(255, 165, 0, 0.5), 0 0 20px rgba(255, 165, 0, 0.5), 0 0 60px rgba(255, 165, 0, 0.5), 0 0 80px rgba(255, 165, 0, 0.5); }
 }
-.wish-container{
+
+.wish-container {
     position: absolute;
+    bottom: 5%;
+    display: flex;
+    gap: 15px;
     color: #9dfb06;
-    min-height: 200px;
     opacity: 1;
 }
 
-.word{
-    font-size: 3rem;
-
+.word {
+    font-size: 4.5rem;
 }
-.word:nth-of-type(1), .letter0{
+
+.word:nth-of-type(1), .letter0 {
     color: #fb064b;
-    text-shadow: 0 0 10px #fb064b;
+    text-shadow: 0 0 15px #fb064b;
     font-family: 'Caveat', cursive;
-
 }
-.word:nth-of-type(2), .letter1{
+
+.word:nth-of-type(2), .letter1 {
     color: #06dafb;
-    text-shadow: 0 0 10px #06dafb;
+    text-shadow: 0 0 15px #06dafb;
     font-family: 'Caveat', cursive;
-
 }
-.word:nth-of-type(3), .letter2{
+
+.word:nth-of-type(3), .letter2 {
     color: #16fb06;
-    text-shadow: 0 0 10px #16fb06;
+    text-shadow: 0 0 15px #16fb06;
     font-family: 'Caveat', cursive;
-
 }
-.word:nth-of-type(4), .letter3{
-    color: #fbc606;
-    text-shadow: 0 0 10px #fbc606;
-    font-family: 'Caveat', cursive;
 
+.word:nth-of-type(4), .letter3 {
+    color: #fbc606;
+    text-shadow: 0 0 15px #fbc606;
+    font-family: 'Caveat', cursive;
 }
