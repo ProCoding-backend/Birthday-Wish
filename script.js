@@ -74,7 +74,7 @@ tl.to(".birthday.name", {
     const age = document.querySelector('.birthday.name.fa.label.age');
     let counter = 0;
     const intervalId = setInterval(() => {
-      age.innerHTML = counter;
+      //age.innerHTML = counter;
       counter += 1;
       if (counter > 14) {
         clearInterval(intervalId);
