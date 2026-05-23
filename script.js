@@ -1,3 +1,13 @@
+document.body.addEventListener('click', () => {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch((err) => {
+            console.log(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+    }
+    const promptObj = document.querySelector(".fullscreen-prompt");
+    if(promptObj) promptObj.style.display = "none";
+}, { once: true });
+
 var tl = gsap.timeline();
 const words = document.querySelectorAll('.word');
 
@@ -18,30 +28,29 @@ letters.forEach((wordLetters, index) => {
 });
 
 gsap.set(".birthday", { opacity: 0 });
-gsap.set(".birthday.name", { opacity: 0, y: 20 });
-gsap.set(".birthday.name.fa.label", { opacity: 0, y: 40 });
+gsap.set(".birthday.name", { opacity: 0, y: 30 });
+gsap.set(".birthday.name.fa.label", { opacity: 0, y: 50 });
 gsap.set(".cake", { opacity: 0 });
 
-
 tl.to(".year.highlight", {
-  y: -140,
+  y: -150,
   opacity: 0,
-  duration: 1.2,
-  ease: "power2.in"
+  duration: 1.5,
+  ease: "power3.in"
 });
 
 tl.call(() => {
   const el = document.querySelector(".year.highlight");
   if (el) {
     el.innerHTML = "6";
-    gsap.set(el, { y: 140 });
+    gsap.set(el, { y: 150 });
   }
 });
 
 tl.to(".year.highlight", {
   y: 0,
   opacity: 1,
-  duration: 1.2,
+  duration: 1.5,
   ease: "bounce.out",
   filter: "hue-rotate(360deg)",
   onComplete: () => {
@@ -52,97 +61,74 @@ tl.to(".year.highlight", {
 });
 
 tl.to(".year, .year.highlight", {
-  y: 200,
+  y: 250,
   opacity: 0,
-  duration: 1,
-  delay: 1,
-  ease: "power2.in"
+  duration: 1.2,
+  delay: 1.2,
+  ease: "power3.in"
 });
 
 tl.to(".birthday", {
   opacity: 1,
-  duration: 2,
+  duration: 2.5,
   ease: "power2.out"
 });
 
 tl.to(".birthday.name", {
   opacity: 1,
   y: 0,
-  duration: 1,
-  stagger: 0.5,
-  onStart: () => {
-    const age = document.querySelector('.birthday.name.fa.label.age');
-    let counter = 0;
-    const intervalId = setInterval(() => {
-      age.innerHTML = counter;
-      counter += 1;
-      if (counter > 14) {
-        clearInterval(intervalId);
-      }
-    }, 100);
-  },
-  ease: "power2.out"
-}, "-=0.6");
+  duration: 1.2,
+  stagger: 0.6,
+  ease: "power3.out"
+}, "-=0.8");
 
 tl.to(".birthday.name.fa.label", {
   opacity: 1,
+  y: 0,
   filter: "hue-rotate(360deg)",
-  duration: 1.5,
-  repeat: 1,
+  duration: 1.8,
+  stagger: 0.4,
   ease: "power2.out"
-}, "+=0.4");
+}, "+=0.2");
 
 tl.to(".cake", {
   opacity: 1,
-  duration: 0.7,
+  duration: 1,
   ease: "bounce.out"
-}, "-=0.1");
-tl.to(".birthday, .birthday.name, .birthday.name.fa.label, .cake", {
-  opacity: 0.1,
-  delay: 1,
-  duration: 1.2,
-  ease: "power2.out"
-});
-tl.to(".letter0, .letter1, .letter2, .letter3",{
-  opacity: 0.2,
-  delay: 1,
-  duration: 1.2,
-  ease: "power2.out",
+}, "-=0.2");
 
-});
-tl.to(".letter0, .letter1, .letter2, .letter3",{
-  opacity: 1,
-  delay: 0.2,
-  duration: 1.2,
-  ease: "power2.out",
-  stagger: 0.2
-});
-tl.to(".letter0, .letter1, .letter2, .letter3",{
-  opacity: 0,
-  delay: 1,
-  duration: 1.2,
-  ease: "power2.out",
-  stagger: 0.2
-});
 tl.to(".birthday, .birthday.name, .birthday.name.fa.label, .cake", {
-  opacity: 1,
-  delay: 0.1,
-  duration: 1.2,
-  ease: "power2.out"
-});
-tl.to(".birthday.name.fa.label", {
-  opacity: 1,
-  filter: "hue-rotate(360deg)",
+  opacity: 0.15,
+  delay: 1.5,
   duration: 1.5,
+  ease: "power2.inOut"
+});
+
+tl.to(".letter0, .letter1, .letter2, .letter3", {
+  opacity: 1,
+  duration: 1,
+  ease: "power2.out",
+  stagger: 0.1
+});
+
+tl.to(".letter0, .letter1, .letter2, .letter3", {
+  opacity: 0,
+  delay: 1.5,
+  duration: 1,
+  ease: "power2.in",
+  stagger: 0.1
+});
+
+tl.to(".birthday, .birthday.name, .birthday.name.fa.label, .cake", {
+  opacity: 1,
+  duration: 1.5,
+  ease: "power2.inOut"
+});
+
+tl.to(".birthday.name.fa.label", {
+  filter: "hue-rotate(360deg)",
+  duration: 2,
   repeat: -1,
-  ease: "power2.out"
-}, "+=0.4");
-
-
-
-
-
-
-
-
-
+  yoyo: true,
+  ease: "sine.inOut"
+}, "+=0.2");
