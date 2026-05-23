@@ -71,15 +71,7 @@ tl.to(".birthday.name", {
   duration: 1,
   stagger: 0.5,
   onStart: () => {
-    const age = document.querySelector('.birthday.name.fa.label.age');
-    let counter = 0;
-    const intervalId = setInterval(() => {
-      //age.innerHTML = counter;
-      counter += 1;
-      if (counter > 14) {
-        clearInterval(intervalId);
-      }
-    }, 100);
+    
   },
   ease: "power2.out"
 }, "-=0.6");
